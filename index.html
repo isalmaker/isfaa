@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffd8e8">
+<title>ISFAA ♡ Birthday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#e98caf;--deep:#8e3f61;--soft:#fff0f6;--cream:#fffafc;--ink:#432936}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+section{min-height:100svh;position:relative;display:grid;place-items:center;padding:8vh 6vw}
+.hero{background:radial-gradient(circle at 50% 40%,#fff 0,#fff6fa 38%,#ffdce9 100%);overflow:hidden}
+.hero-inner{text-align:center;max-width:800px;z-index:2}
+.kicker{letter-spacing:.28em;text-transform:uppercase;font-size:.72rem;color:var(--deep);opacity:.75}
+h1{font-family:"Cormorant Garamond",serif;font-size:clamp(4rem,14vw,9rem);line-height:.75;margin:22px 0;color:var(--deep);font-weight:600}
+.subtitle{font-size:clamp(1rem,3vw,1.3rem);opacity:.78}
+.btn{display:inline-flex;margin-top:30px;padding:13px 22px;border-radius:999px;border:1px solid #e9a7bd;background:#fff;color:var(--deep);text-decoration:none;box-shadow:0 10px 30px #c56c8b20;transition:transform .35s ease,box-shadow .35s ease}
+.btn:hover{transform:translateY(-3px);box-shadow:0 16px 35px #c56c8b30}
+.flower{position:absolute;width:210px;aspect-ratio:1;opacity:.7;filter:blur(.1px);animation:float 7s ease-in-out infinite}
+.flower:before,.flower:after{content:"";position:absolute;inset:35px;border-radius:50%;background:#f2a2bd;box-shadow:0 -55px 0 #f7b6cc,0 55px 0 #ef91b0,55px 0 0 #f5a9c3,-55px 0 0 #eca0ba}
+.flower i{position:absolute;width:48px;height:48px;background:#d9799e;border-radius:50%;left:81px;top:81px}
+.f1{left:-55px;top:9%;transform:rotate(18deg)}.f2{right:-55px;bottom:8%;transform:rotate(-15deg);animation-delay:-2s}
+@keyframes float{50%{transform:translateY(-14px) rotate(3deg)}}
+.memories{background:linear-gradient(180deg,#fff7fa,#ffe8f1)}
+.wrap{width:min(1050px,100%)}.section-title{font-family:"Cormorant Garamond",serif;font-size:clamp(2.7rem,8vw,5rem);text-align:center;color:var(--deep);margin:0 0 12px}.lead{text-align:center;opacity:.7;max-width:600px;margin:0 auto 42px}
+.hall{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.card{aspect-ratio:3/4;border-radius:24px;overflow:hidden;background:#f8c9d9;border:1px solid #efb0c5;position:relative;cursor:pointer;transform:translateZ(0);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.card:hover{transform:translateY(-8px) scale(1.015);box-shadow:0 20px 45px #9e496522}
+.card img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .5s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.card img.loaded{opacity:1}.card:hover img{transform:scale(1.04)}
+.num{position:absolute;left:14px;top:12px;width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:#ffffffc9;color:var(--deep);font-weight:600;backdrop-filter:blur(7px)}
+.placeholder{position:absolute;inset:0;display:grid;place-items:center;color:#8e3f61aa;font-size:.85rem;text-align:center;padding:20px}
+.final{background:#fff;overflow:hidden}.message{text-align:center;max-width:720px}.message h2{font-family:"Cormorant Garamond",serif;font-size:clamp(3rem,9vw,6rem);color:var(--deep);margin:0 0 20px}.message p{line-height:1.8;opacity:.78}
+footer{text-align:center;padding:30px 15px;background:#fff;color:#9d647c;font-size:.78rem}
+@media(max-width:760px){.hall{grid-template-columns:repeat(2,1fr);gap:12px}.card:last-child{grid-column:1/-1;max-width:48%;justify-self:center}.flower{transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="flower f1"><i></i></div><div class="flower f2"><i></i></div>
+  <div class="hero-inner">
+    <div class="kicker">a little birthday page</div>
+    <h1>ISFAA ♡</h1>
+    <div class="subtitle">Untuk seseorang yang membuat hari-hari terasa sedikit lebih indah.</div>
+    <a class="btn" href="#memories">lihat kenangan ↓</a>
+  </div>
+</section>
+
+<section class="memories" id="memories">
+  <div class="wrap">
+    <h2 class="section-title">Our little hall</h2>
+    <p class="lead">Lima potongan kecil dari cerita yang ingin disimpan di sini.</p>
+    <div class="hall">
+      <div class="card"><span class="num">1</span><span class="placeholder">Tambahkan foto 1</span><img data-src="images/1.jpg" alt="Kenangan 1"></div>
+      <div class="card"><span class="num">2</span><span class="placeholder">Tambahkan foto 2</span><img data-src="images/2.jpg" alt="Kenangan 2"></div>
+      <div class="card"><span class="num">3</span><span class="placeholder">Tambahkan foto 3</span><img data-src="images/3.jpg" alt="Kenangan 3"></div>
+      <div class="card"><span class="num">4</span><span class="placeholder">Tambahkan foto 4</span><img data-src="images/4.jpg" alt="Kenangan 4"></div>
+      <div class="card"><span class="num">5</span><span class="placeholder">Tambahkan foto 5</span><img data-src="images/5.jpg" alt="Kenangan 5"></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="message">
+    <div class="kicker">for you</div>
+    <h2>Happy Birthday ♡</h2>
+    <p>Semoga hari ini dipenuhi hal-hal kecil yang bikin senyum. Terima kasih sudah menjadi bagian dari cerita ini.</p>
+  </div>
+</section>
+<footer>made with ♡ · isfaa.my.id</footer>
+
+<script>
+const imgs=[...document.querySelectorAll('img[data-src]')];
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const img=e.target; img.src=img.dataset.src;
+    img.onload=()=>{img.classList.add('loaded');img.previousElementSibling.style.display='none'};
+    img.onerror=()=>{};
+    io.unobserve(img);
+  });
+},{rootMargin:'300px'});
+imgs.forEach(i=>io.observe(i));
+</script>
+</body>
+</html>
