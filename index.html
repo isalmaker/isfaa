@@ -8,107 +8,191 @@
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#fff7fa;color:#6f3a52;font-family:Arial,sans-serif;overflow-x:hidden}
+:root{
+  --bg:#fff7fa;--pink:#934766;--soft:#f7c9d9;--line:#edb2c5;
+  --text:#6f3a52;--muted:#9b6d7e;--white:#fff
+}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;overflow-x:hidden}
 section{min-height:100svh;position:relative}
-.hero{display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at center,#fff 0,#fff8fb 42%,#ffdce9 100%)}
-.center{position:relative;z-index:10;text-align:center;padding:25px;opacity:0;transform:translateY(24px);animation:contentIn 1.25s .55s cubic-bezier(.2,.8,.2,1) forwards}
+.hero{
+  display:grid;place-items:center;overflow:hidden;
+  background:radial-gradient(circle at 50% 42%,#fff 0,#fff8fb 38%,#ffdce9 100%)
+}
+.center{position:relative;z-index:10;text-align:center;padding:25px;opacity:0;transform:translateY(24px);animation:contentIn 1.25s .45s cubic-bezier(.2,.8,.2,1) forwards}
 .small{font-size:11px;letter-spacing:4px;text-transform:uppercase;opacity:.58;margin-bottom:16px}
-h1{margin:0;font-family:Georgia,serif;font-size:clamp(70px,18vw,145px);line-height:.78;font-weight:500;letter-spacing:-5px;color:#934766}
+h1{margin:0;font-family:Georgia,serif;font-size:clamp(70px,18vw,145px);line-height:.78;font-weight:500;letter-spacing:-5px;color:var(--pink)}
 h1 span{display:inline-block;animation:heart 2.4s 2s ease-in-out infinite}
 .desc{font-size:15px;line-height:1.7;opacity:.66;margin:27px auto 0;max-width:390px}
-.enter{display:inline-block;margin-top:29px;padding:13px 23px;border:1px solid #e4a1ba;border-radius:999px;background:#ffffffb8;color:#813c59;text-decoration:none;font-size:14px;opacity:0;transform:translateY(12px);animation:buttonIn .9s 1.65s cubic-bezier(.2,.8,.2,1) forwards;box-shadow:0 12px 30px #a54c6d18;transition:.4s}
+.enter{
+  display:inline-block;margin-top:29px;padding:13px 23px;border:1px solid #e4a1ba;border-radius:999px;
+  background:#ffffffb8;color:#813c59;text-decoration:none;font-size:14px;
+  opacity:0;transform:translateY(12px);animation:buttonIn .9s 1.55s cubic-bezier(.2,.8,.2,1) forwards;
+  box-shadow:0 12px 30px #a54c6d18;transition:.35s
+}
 .enter:hover{transform:translateY(-3px);background:#fff;box-shadow:0 18px 38px #a54c6d2b}
+.scrollhint{margin-top:22px;font-size:10px;letter-spacing:2px;opacity:.38;animation:pulse 2s 2.3s infinite}
 .flower{position:absolute;width:125px;height:125px;z-index:3;opacity:0;animation:flowerAppear 1.1s .15s ease-out forwards,flowerFloat 7s 1.25s ease-in-out infinite}
 .flower:before{content:"";position:absolute;inset:28px;border-radius:50%;background:#f3a1bc;box-shadow:0 -39px #f8b8ce,0 39px #ee91b1,39px 0 #f5a9c2,-39px 0 #ef9db8,28px 28px #f2a3bd,-28px -28px #f9bfd2,28px -28px #ee98b5,-28px 28px #f5aec6}
 .flower:after{content:"";position:absolute;width:29px;height:29px;left:48px;top:48px;border-radius:50%;background:#d7779c;box-shadow:0 0 0 7px #f8c6d7}
-.a{left:5%;top:10%;transform:rotate(-15deg)}
-.b{right:5%;top:17%;transform:rotate(16deg);animation-delay:.35s,2s}
-.c{left:11%;bottom:5%;transform:scale(.72);animation-delay:.6s,2.8s}
-.d{right:10%;bottom:7%;transform:scale(.8);animation-delay:.25s,1.4s}
+.a{left:5%;top:10%;transform:rotate(-15deg)}.b{right:5%;top:17%;transform:rotate(16deg);animation-delay:.35s,2s}
+.c{left:11%;bottom:5%;transform:scale(.72);animation-delay:.6s,2.8s}.d{right:10%;bottom:7%;transform:scale(.8);animation-delay:.25s,1.4s}
 .petal{position:absolute;width:12px;height:20px;border-radius:90% 15% 90% 15%;background:#efa0ba;opacity:0;z-index:1;animation:fall 9s linear infinite}
 .p1{left:24%;animation-delay:.3s}.p2{left:47%;animation-delay:2.7s}.p3{left:72%;animation-delay:4.5s}.p4{left:87%;animation-delay:6.2s}
-.memories{background:linear-gradient(#fff0f6,#fff8fb);display:grid;place-items:center;padding:70px 7vw}
+.spark{position:absolute;width:4px;height:4px;border-radius:50%;background:#e8a0b9;opacity:.45;animation:sparkle 3s ease-in-out infinite}
+.s1{left:18%;top:36%}.s2{right:20%;top:43%;animation-delay:1s}.s3{left:30%;bottom:25%;animation-delay:1.8s}.s4{right:31%;bottom:29%;animation-delay:.5s}
+
+.memories{background:linear-gradient(#fff0f6,#fff8fb);display:grid;place-items:center;padding:85px 7vw}
 .wrap{width:min(1000px,100%)}
-.title{text-align:center;font:500 clamp(45px,9vw,76px)/1 Georgia,serif;color:#934766;margin:0}
-.lead{text-align:center;opacity:.62;margin:15px auto 38px}
+.title{text-align:center;font:500 clamp(45px,9vw,76px)/1 Georgia,serif;color:var(--pink);margin:0}
+.lead{text-align:center;opacity:.62;margin:15px auto 14px}
+.counter{text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b0788d;margin-bottom:35px}
 .hall{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.card{position:relative;aspect-ratio:3/4;border-radius:24px;overflow:hidden;background:#f7cad9;border:1px solid #edb2c5;box-shadow:0 12px 30px #9b49631a;transform:translateY(30px);opacity:0;transition:transform .65s cubic-bezier(.2,.8,.2,1),opacity .65s ease,box-shadow .4s}
+.card{
+ position:relative;aspect-ratio:3/4;border-radius:24px;overflow:hidden;background:#f7cad9;border:1px solid var(--line);
+ box-shadow:0 12px 30px #9b49631a;transform:translateY(30px);opacity:0;
+ transition:transform .65s cubic-bezier(.2,.8,.2,1),opacity .65s ease,box-shadow .4s;
+ cursor:pointer
+}
 .card.show{transform:none;opacity:1}
 .card:hover{transform:translateY(-7px) scale(1.015);box-shadow:0 22px 45px #9b49632b}
 .card img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .5s,transform .8s}
 .card img.loaded{opacity:1}.card:hover img{transform:scale(1.045)}
-.num{position:absolute;z-index:2;left:12px;top:12px;width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:#fffbd0;color:#7f3d58;font-size:13px}
+.num{position:absolute;z-index:2;left:12px;top:12px;width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:#fffbd0;color:#7f3d58;font-size:13px;box-shadow:0 5px 15px #5b24351c}
 .placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:15px;color:#8c4a64aa;font-size:13px}
-.end{min-height:75svh;display:grid;place-items:center;text-align:center;background:#fff}
-.end h2{font:500 clamp(55px,12vw,100px)/.9 Georgia,serif;color:#934766;margin:0}
-.end p{max-width:550px;line-height:1.8;opacity:.65}
+
+.end{min-height:75svh;display:grid;place-items:center;text-align:center;background:#fff;overflow:hidden}
+.end:before,.end:after{content:"♡";position:absolute;font-family:Georgia,serif;color:#f3c2d2;font-size:130px;opacity:.25}
+.end:before{left:5%;top:18%;transform:rotate(-15deg)}.end:after{right:5%;bottom:10%;transform:rotate(15deg)}
+.end>div{position:relative;z-index:2;padding:30px}
+.end h2{font:500 clamp(55px,12vw,100px)/.9 Georgia,serif;color:var(--pink);margin:0}
+.end p{max-width:550px;line-height:1.8;opacity:.65;margin:24px auto 0}
+.back{display:inline-block;margin-top:25px;color:#934766;text-decoration:none;border-bottom:1px solid #e4a1ba;padding-bottom:4px}
+
 footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a56b82;background:#fff}
+
+/* fullscreen viewer */
+.viewer{position:fixed;inset:0;background:#170b11e8;z-index:100;display:none;align-items:center;justify-content:center;padding:25px;backdrop-filter:blur(10px)}
+.viewer.open{display:flex}
+.viewer img{max-width:94vw;max-height:86vh;object-fit:contain;border-radius:18px;box-shadow:0 25px 80px #0008}
+.close{position:absolute;right:20px;top:18px;width:44px;height:44px;border:1px solid #ffffff55;border-radius:50%;background:#ffffff18;color:#fff;font-size:24px;cursor:pointer}
+.viewer .caption{position:absolute;bottom:22px;color:#fff;opacity:.8;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+
 @keyframes contentIn{to{opacity:1;transform:none}}
 @keyframes buttonIn{to{opacity:1;transform:none}}
 @keyframes flowerAppear{to{opacity:.8}}
 @keyframes flowerFloat{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -16px;rotate:4deg}}
 @keyframes heart{0%,100%{transform:scale(1)}12%{transform:scale(1.13)}24%{transform:scale(1)}}
+@keyframes pulse{0%,100%{opacity:.25}50%{opacity:.65}}
+@keyframes sparkle{0%,100%{transform:scale(.6);opacity:.15}50%{transform:scale(1.5);opacity:.65}}
 @keyframes fall{0%{transform:translate3d(0,-10vh,0) rotate(0);opacity:0}12%{opacity:.42}100%{transform:translate3d(55px,110vh,0) rotate(250deg);opacity:0}}
+
 @media(max-width:760px){
-.hall{grid-template-columns:repeat(2,1fr)}
-.card:last-child{grid-column:1/-1;width:48%;justify-self:center}
-.flower{width:100px;height:100px}
-.flower:before{inset:23px;box-shadow:0 -31px #f8b8ce,0 31px #ee91b1,31px 0 #f5a9c2,-31px 0 #ef9db8,22px 22px #f2a3bd,-22px -22px #f9bfd2,22px -22px #ee98b5,-22px 22px #f5aec6}
-.flower:after{width:24px;height:24px;left:38px;top:38px}
+ .hall{grid-template-columns:repeat(2,1fr)}
+ .card:last-child{grid-column:1/-1;width:48%;justify-self:center}
+ .flower{width:100px;height:100px}
+ .flower:before{inset:23px;box-shadow:0 -31px #f8b8ce,0 31px #ee91b1,31px 0 #f5a9c2,-31px 0 #ef9db8,22px 22px #f2a3bd,-22px -22px #f9bfd2,22px -22px #ee98b5,-22px 22px #f5aec6}
+ .flower:after{width:24px;height:24px;left:38px;top:38px}
+ .memories{padding:75px 5vw}
 }
 @media(prefers-reduced-motion:reduce){
-*,*:before,*:after{animation:none!important;transition:none!important}
-.center,.enter,.flower,.card{opacity:1!important;transform:none!important}
+ *,*:before,*:after{animation:none!important;transition:none!important}
+ .center,.enter,.flower,.card{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
 <body>
 
-<section class="hero">
-<div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div><div class="petal p4"></div>
-<div class="flower a"></div><div class="flower b"></div><div class="flower c"></div><div class="flower d"></div>
+<section class="hero" id="top">
+  <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div><div class="petal p4"></div>
+  <div class="spark s1"></div><div class="spark s2"></div><div class="spark s3"></div><div class="spark s4"></div>
+  <div class="flower a"></div><div class="flower b"></div><div class="flower c"></div><div class="flower d"></div>
 
-<div class="center">
-<div class="small">a little birthday page</div>
-<h1>ISFAA <span>♡</span></h1>
-<p class="desc">Sebuah halaman kecil untuk hari yang spesial.</p>
-<a class="enter" href="#memories">Masuk ke cerita&nbsp; →</a>
-</div>
+  <div class="center">
+    <div class="small">a little birthday page</div>
+    <h1>ISFAA <span>♡</span></h1>
+    <p class="desc">Sebuah halaman kecil untuk hari yang spesial.</p>
+    <a class="enter" href="#memories">Masuk ke cerita&nbsp; →</a>
+    <div class="scrollhint">scroll pelan-pelan</div>
+  </div>
 </section>
 
 <section class="memories" id="memories">
-<div class="wrap">
-<h2 class="title">Our little hall</h2>
-<p class="lead">Lima potongan kecil dari cerita kita.</p>
-<div class="hall">
-<div class="card"><span class="num">1</span><span class="placeholder">Foto 1</span><img data-src="images/1.jpg" alt="Kenangan 1"></div>
-<div class="card"><span class="num">2</span><span class="placeholder">Foto 2</span><img data-src="images/2.jpg" alt="Kenangan 2"></div>
-<div class="card"><span class="num">3</span><span class="placeholder">Foto 3</span><img data-src="images/3.jpg" alt="Kenangan 3"></div>
-<div class="card"><span class="num">4</span><span class="placeholder">Foto 4</span><img data-src="images/4.jpg" alt="Kenangan 4"></div>
-<div class="card"><span class="num">5</span><span class="placeholder">Foto 5</span><img data-src="images/5.jpg" alt="Kenangan 5"></div>
-</div>
-</div>
+  <div class="wrap">
+    <h2 class="title">Our little hall</h2>
+    <p class="lead">Lima potongan kecil dari cerita kita.</p>
+    <div class="counter">5 little memories · tap a photo</div>
+
+    <div class="hall">
+      <div class="card"><span class="num">1</span><span class="placeholder">Foto 1</span><img data-src="images/1.jpg" alt="Kenangan 1"></div>
+      <div class="card"><span class="num">2</span><span class="placeholder">Foto 2</span><img data-src="images/2.jpg" alt="Kenangan 2"></div>
+      <div class="card"><span class="num">3</span><span class="placeholder">Foto 3</span><img data-src="images/3.jpg" alt="Kenangan 3"></div>
+      <div class="card"><span class="num">4</span><span class="placeholder">Foto 4</span><img data-src="images/4.jpg" alt="Kenangan 4"></div>
+      <div class="card"><span class="num">5</span><span class="placeholder">Foto 5</span><img data-src="images/5.jpg" alt="Kenangan 5"></div>
+    </div>
+  </div>
 </section>
 
 <section class="end">
-<div><div class="small">Happy Birthday</div><h2>Isti Olivia ♡</h2><p>Semoga hari ini membawa banyak alasan untuk tersenyum, dan semoga halaman kecil ini menjadi salah satu kenangan yang menyenangkan.</p></div>
+  <div>
+    <div class="small">for you</div>
+    <h2>Happy Birthday ♡</h2>
+    <p>Semoga hari ini membawa banyak alasan untuk tersenyum, dan semoga halaman kecil ini menjadi salah satu kenangan yang menyenangkan.</p>
+    <a class="back" href="#top">kembali ke awal ↑</a>
+  </div>
 </section>
+
 <footer>ISFAA ♡</footer>
+
+<div class="viewer" id="viewer" aria-hidden="true">
+  <button class="close" id="close" aria-label="Tutup">×</button>
+  <img id="viewerImg" src="" alt="">
+  <div class="caption" id="caption"></div>
+</div>
 
 <script>
 const cards=[...document.querySelectorAll(".card")];
-const cardIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");cardIO.unobserve(e.target)}}),{threshold:.18});
+const cardIO=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add("show");cardIO.unobserve(e.target)}
+}),{threshold:.18});
 cards.forEach(c=>cardIO.observe(c));
 
 const imgs=[...document.querySelectorAll("img[data-src]")];
 const imgIO=new IntersectionObserver(es=>es.forEach(e=>{
-if(!e.isIntersecting)return;
-const img=e.target;
-img.src=img.dataset.src;
-img.onload=()=>{img.classList.add("loaded");img.previousElementSibling.style.display="none"};
-imgIO.unobserve(img);
+  if(!e.isIntersecting)return;
+  const img=e.target;
+  img.src=img.dataset.src;
+  img.onload=()=>{img.classList.add("loaded");img.previousElementSibling.style.display="none"};
+  img.onerror=()=>{img.previousElementSibling.textContent="Foto belum tersedia"};
+  imgIO.unobserve(img);
 }),{rootMargin:"350px"});
 imgs.forEach(i=>imgIO.observe(i));
+
+const viewer=document.getElementById("viewer");
+const viewerImg=document.getElementById("viewerImg");
+const caption=document.getElementById("caption");
+const close=document.getElementById("close");
+
+cards.forEach((card,index)=>{
+  card.addEventListener("click",()=>{
+    const img=card.querySelector("img");
+    if(!img.src)return;
+    viewerImg.src=img.src;
+    viewerImg.alt=img.alt;
+    caption.textContent="Kenangan "+(index+1);
+    viewer.classList.add("open");
+    viewer.setAttribute("aria-hidden","false");
+    document.body.style.overflow="hidden";
+  });
+});
+function closeViewer(){
+  viewer.classList.remove("open");
+  viewer.setAttribute("aria-hidden","true");
+  viewerImg.src="";
+  document.body.style.overflow="";
+}
+close.addEventListener("click",closeViewer);
+viewer.addEventListener("click",e=>{if(e.target===viewer)closeViewer()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeViewer()});
 </script>
 </body>
 </html>
