@@ -77,6 +77,63 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
 .close{position:absolute;right:20px;top:18px;width:44px;height:44px;border:1px solid #ffffff55;border-radius:50%;background:#ffffff18;color:#fff;font-size:24px;cursor:pointer}
 .viewer .caption{position:absolute;bottom:22px;color:#fff;opacity:.8;font-size:12px;letter-spacing:2px;text-transform:uppercase}
 
+
+/* cinematic opening + ending upgrade */
+.opening-note{
+  position:absolute;top:28px;left:50%;transform:translateX(-50%);
+  font-size:9px;letter-spacing:4px;color:#9c6378;opacity:0;
+  animation:noteIn 1s 1.9s ease forwards
+}
+.pretitle{
+  font-family:Georgia,serif;font-style:italic;font-size:clamp(18px,4vw,25px);
+  color:#a46b80;opacity:0;transform:translateY(12px);
+  animation:preIn 1s .8s cubic-bezier(.2,.8,.2,1) forwards
+}
+.center h1{opacity:0;transform:scale(.92) translateY(10px);animation:titleIn 1.35s 1.05s cubic-bezier(.16,.8,.2,1) forwards}
+.center .desc{opacity:0;transform:translateY(10px);animation:descIn 1s 1.7s ease forwards}
+.opening-line{
+  position:absolute;left:50%;bottom:0;width:1px;height:0;background:#d995ad;
+  opacity:.35;transform:translateX(-50%);animation:lineGrow 1.8s 2.1s ease forwards
+}
+.hero:after{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,#fff8fb 0%,transparent 18%,transparent 82%,#f7d6e3 100%);
+  pointer-events:none;opacity:.5
+}
+.end{background:radial-gradient(circle at 50% 42%,#fff 0,#fff6fa 38%,#f9d5e2 100%)}
+.end-content{position:relative;z-index:5;padding:35px;opacity:0;transform:translateY(30px);animation:endIn 1.25s .25s cubic-bezier(.2,.8,.2,1) forwards}
+.end-kicker{
+  font-family:Georgia,serif;font-style:italic;font-size:18px;color:#aa7184;
+  margin:12px 0 18px;opacity:0;animation:fadeUp .9s .65s ease forwards
+}
+.end h2{
+  font-size:clamp(62px,14vw,125px);letter-spacing:-4px;
+  opacity:0;transform:translateY(15px) scale(.96);animation:endTitle 1.15s .8s cubic-bezier(.15,.8,.2,1) forwards
+}
+.end h2 span{display:inline-block;font-size:.65em;animation:heart 2.4s 2.5s ease-in-out infinite}
+.end-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:25px 0 8px;opacity:0;animation:fadeUp .8s 1.45s ease forwards}
+.end-divider i{display:block;width:55px;height:1px;background:#dba0b5}
+.end-divider span{font-size:12px;color:#c17c96}
+.end p{opacity:0;transform:translateY(10px);animation:fadeUp 1s 1.6s ease forwards}
+.end .back{opacity:0;animation:fadeUp .8s 2s ease forwards}
+.end-orbit{
+  position:absolute;z-index:1;font-family:Georgia,serif;color:#df9eb7;opacity:0;
+  animation:orbitIn 1.2s 1.1s ease forwards,orbitFloat 6s 2.3s ease-in-out infinite
+}
+.orbit-1{left:12%;top:22%;font-size:90px;transform:rotate(-15deg)}
+.orbit-2{right:17%;top:25%;font-size:35px;animation-delay:1.3s,2.8s}
+.orbit-3{right:10%;bottom:17%;font-size:100px;animation-delay:1.5s,3.1s}
+.end:before,.end:after{opacity:.12}
+@keyframes noteIn{to{opacity:.45}}
+@keyframes preIn{to{opacity:1;transform:none}}
+@keyframes titleIn{to{opacity:1;transform:none}}
+@keyframes descIn{to{opacity:.66;transform:none}}
+@keyframes lineGrow{to{height:52px}}
+@keyframes endIn{to{opacity:1;transform:none}}
+@keyframes endTitle{to{opacity:1;transform:none}}
+@keyframes fadeUp{to{opacity:.68;transform:none}}
+@keyframes orbitIn{to{opacity:.28}}
+@keyframes orbitFloat{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -14px;rotate:5deg}}
+
 @keyframes contentIn{to{opacity:1;transform:none}}
 @keyframes buttonIn{to{opacity:1;transform:none}}
 @keyframes flowerAppear{to{opacity:.8}}
@@ -96,7 +153,7 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
 }
 @media(prefers-reduced-motion:reduce){
  *,*:before,*:after{animation:none!important;transition:none!important}
- .center,.enter,.flower,.card{opacity:1!important;transform:none!important}
+ .center,.enter,.flower,.card,.opening-note,.opening-line,.pretitles,.end-content,.end-kicker,.end h2,.end-divider,.end p,.end .back,.end-orbit{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
@@ -107,13 +164,16 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
   <div class="spark s1"></div><div class="spark s2"></div><div class="spark s3"></div><div class="spark s4"></div>
   <div class="flower a"></div><div class="flower b"></div><div class="flower c"></div><div class="flower d"></div>
 
+  <div class="opening-note">05 · 09 · 2026</div>
   <div class="center">
-    <div class="small">a little birthday page</div>
+    <div class="small">for someone special</div>
+    <div class="pretitle">a tiny place for</div>
     <h1>ISFAA <span>♡</span></h1>
-    <p class="desc">Sebuah halaman kecil untuk hari yang spesial.</p>
-    <a class="enter" href="#memories">Masuk ke cerita&nbsp; →</a>
-    <div class="scrollhint">scroll pelan-pelan</div>
+    <p class="desc">Ada sedikit cerita yang sengaja disimpan di sini.</p>
+    <a class="enter" href="#memories">buka perlahan&nbsp; →</a>
+    <div class="scrollhint">pelan-pelan ↓</div>
   </div>
+  <div class="opening-line"></div>
 </section>
 
 <section class="memories" id="memories">
@@ -133,11 +193,16 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
 </section>
 
 <section class="end">
-  <div>
-    <div class="small">for you</div>
-    <h2>Happy Birthday ♡</h2>
-    <p>Semoga hari ini membawa banyak alasan untuk tersenyum, dan semoga halaman kecil ini menjadi salah satu kenangan yang menyenangkan.</p>
-    <a class="back" href="#top">kembali ke awal ↑</a>
+  <div class="end-orbit orbit-1">♡</div>
+  <div class="end-orbit orbit-2">✦</div>
+  <div class="end-orbit orbit-3">♡</div>
+  <div class="end-content">
+    <div class="small">and that's only a little part</div>
+    <div class="end-kicker">one more thing...</div>
+    <h2>Happy<br>Birthday <span>♡</span></h2>
+    <div class="end-divider"><i></i><span>✦</span><i></i></div>
+    <p>Semoga semua hal baik menemukan jalannya kepadamu. Terima kasih sudah menjadi bagian dari cerita yang layak untuk diingat.</p>
+    <a class="back" href="#top">mulai lagi dari awal ↑</a>
   </div>
 </section>
 
