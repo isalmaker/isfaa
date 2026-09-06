@@ -156,6 +156,152 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
  .center,.enter,.flower,.card,.opening-note,.opening-line,.pretitles,.end-content,.end-kicker,.end h2,.end-divider,.end p,.end .back,.end-orbit{opacity:1!important;transform:none!important}
 }
 </style>
+
+<style id="elegant-polish">
+  :root{
+    --rose:#b86b83;
+    --rose-soft:#f3dbe3;
+    --cream:#fffaf7;
+    --ink:#4d4145;
+  }
+
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(circle at 15% 10%, rgba(243,219,227,.45), transparent 28%),
+      radial-gradient(circle at 85% 25%, rgba(255,239,225,.55), transparent 30%),
+      var(--cream);
+    color:var(--ink);
+  }
+
+  .hero{
+    min-height:100svh;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .hero::before,
+  .hero::after{
+    content:"";
+    position:absolute;
+    border:1px solid rgba(184,107,131,.16);
+    border-radius:50%;
+    pointer-events:none;
+  }
+  .hero::before{width:340px;height:340px;left:-180px;top:12%;animation:floatRing 12s ease-in-out infinite}
+  .hero::after{width:260px;height:260px;right:-150px;bottom:8%;animation:floatRing 10s ease-in-out infinite reverse}
+
+  .center{
+    filter:drop-shadow(0 18px 35px rgba(100,55,70,.08));
+  }
+
+  h1{
+    text-wrap:balance;
+    text-shadow:0 8px 25px rgba(110,70,85,.08);
+  }
+
+  .entry{
+    box-shadow:0 10px 30px rgba(130,75,95,.12);
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .entry:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 38px rgba(130,75,95,.18);
+  }
+
+  .memories{
+    position:relative;
+  }
+  .memories::before{
+    content:"♡";
+    position:absolute;
+    top:5%;
+    right:7%;
+    font-size:30px;
+    opacity:.13;
+    transform:rotate(12deg);
+  }
+
+  .card{
+    border:1px solid rgba(184,107,131,.12);
+    box-shadow:0 12px 32px rgba(90,55,65,.07);
+    transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+  }
+  .card:hover{
+    transform:translateY(-7px) rotate(.3deg);
+    box-shadow:0 20px 45px rgba(90,55,65,.13);
+  }
+  .card:nth-child(even):hover{transform:translateY(-7px) rotate(-.3deg)}
+
+  .end{
+    position:relative;
+    overflow:hidden;
+  }
+  .end::before{
+    content:"✦  ♡  ✦";
+    display:block;
+    margin-bottom:22px;
+    letter-spacing:10px;
+    font-size:13px;
+    opacity:.35;
+  }
+
+  .music-player{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:50;
+  }
+
+  .music-toggle{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid rgba(184,107,131,.22);
+    background:rgba(255,250,247,.78);
+    color:var(--rose);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-radius:999px;
+    padding:9px 14px 9px 11px;
+    font:inherit;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(90,55,65,.10);
+    transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
+  }
+  .music-toggle:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(90,55,65,.15)}
+  .music-icon{
+    width:28px;height:28px;
+    display:grid;place-items:center;
+    border-radius:50%;
+    background:var(--rose-soft);
+    font-size:17px;
+    line-height:1;
+  }
+  .music-label{font-size:12px;letter-spacing:.08em}
+  .music-toggle.playing .music-icon{animation:musicPulse 1.2s ease-in-out infinite}
+  .music-toggle.playing .music-label::after{content:" · playing"}
+
+  @keyframes musicPulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.12)}
+  }
+  @keyframes floatRing{
+    0%,100%{transform:translate3d(0,0,0) rotate(0)}
+    50%{transform:translate3d(0,-18px,0) rotate(8deg)}
+  }
+
+  @media (max-width:600px){
+    .music-player{right:12px;bottom:12px}
+    .music-toggle{padding:8px 11px 8px 9px}
+    .music-label{font-size:11px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+  }
+</style>
+
 </head>
 <body>
 
@@ -259,5 +405,46 @@ close.addEventListener("click",closeViewer);
 viewer.addEventListener("click",e=>{if(e.target===viewer)closeViewer()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeViewer()});
 </script>
+
+<div class="music-player" id="musicPlayer" aria-label="Pemutar musik">
+  <audio id="bgMusic" src="audio/birthday.mp3" loop preload="auto"></audio>
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="Putar musik" aria-pressed="false">
+    <span class="music-icon">♪</span>
+    <span class="music-label">music</span>
+  </button>
+</div>
+
+
+<script id="music-script">
+(() => {
+  const audio = document.getElementById('bgMusic');
+  const btn = document.getElementById('musicToggle');
+  const entry = document.querySelector('.entry');
+
+  if (!audio || !btn) return;
+
+  const setState = (playing) => {
+    btn.classList.toggle('playing', playing);
+    btn.setAttribute('aria-pressed', String(playing));
+    btn.setAttribute('aria-label', playing ? 'Matikan musik' : 'Putar musik');
+  };
+
+  const playMusic = () => audio.play().then(() => setState(true)).catch(() => setState(false));
+
+  btn.addEventListener('click', () => {
+    if (audio.paused) playMusic();
+    else { audio.pause(); setState(false); }
+  });
+
+  // User gesture on the opening button starts the soundtrack.
+  if (entry) entry.addEventListener('click', () => {
+    playMusic();
+  }, { once: true });
+
+  audio.addEventListener('play', () => setState(true));
+  audio.addEventListener('pause', () => setState(false));
+})();
+</script>
+
 </body>
 </html>
