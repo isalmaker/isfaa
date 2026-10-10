@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4e9dc">
+  <meta name="description" content="A little book of memories, kind words, and birthday wishes.">
+  <title>For Isti, With Love ♡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="scene">
+    <header class="intro">
+      <p class="eyebrow">A LITTLE BOOK MADE FOR YOU</p>
+      <h1>For Isti, <em>with love.</em></h1>
+      <p class="subtitle">Some words I wanted you to keep. ♡</p>
+    </header>
+
+    <section class="book-area" aria-label="Buku ungkapan interaktif">
+      <div class="book" id="book">
+        <div class="book-back"></div>
+        <div class="page-stack" aria-hidden="true"></div>
+
+        <article class="page cover-page" data-page="cover">
+          <div class="cover-inner">
+            <span class="cover-stamp">♡</span>
+            <p class="cover-kicker">A COLLECTION OF LITTLE THINGS</p>
+            <h2>Dear<br><em>Isti</em></h2>
+            <p class="cover-note">for all the words<br>that are hard to say</p>
+            <div class="cover-flower" aria-hidden="true">✿</div>
+            <p class="cover-footer">OPEN WHEN YOU'RE READY</p>
+          </div>
+        </article>
+
+        <article class="page" data-page="1">
+          <div class="paper">
+            <div class="tape tape-left"></div>
+            <p class="page-label">01 · A LITTLE NOTE</p>
+            <h2>For someone<br><em>special.</em></h2>
+            <p>Some people make ordinary days feel a little less ordinary. They bring a little more warmth, a little more laughter, and something worth remembering.</p>
+            <p>And somehow, you became one of those people to me.</p>
+            <div class="doodle heart-doodle" aria-hidden="true">♡</div>
+            <span class="page-number">01</span>
+          </div>
+        </article>
+
+        <article class="page" data-page="2">
+          <div class="paper paper-pink">
+            <div class="tape tape-right"></div>
+            <p class="page-label">02 · THE LITTLE THINGS</p>
+            <h2>It's the little<br><em>things.</em></h2>
+            <p>It's the conversations that go on longer than expected, the random moments that turn into memories, and the small things that somehow stay in your mind.</p>
+            <p>Not every meaningful moment has to be big. Sometimes, the simplest ones become the ones we keep.</p>
+            <span class="sticker star-sticker" aria-hidden="true">✳</span>
+            <span class="page-number">02</span>
+          </div>
+        </article>
+
+        <article class="page" data-page="3">
+          <div class="paper paper-lined">
+            <p class="page-label">03 · A MEMORY TO KEEP</p>
+            <h2>Little moments,<br><em>long memories.</em></h2>
+            <div class="memory-card">
+              <span class="memory-icon">✿</span>
+              <p>Maybe it wasn't a perfect day or a grand adventure. Maybe it was just one of those small moments that made us smile.</p>
+            </div>
+            <p>Whatever the moment was, I'm glad it became a memory worth keeping.</p>
+            <p class="handwritten">keep this one close ♡</p>
+            <span class="page-number">03</span>
+          </div>
+        </article>
+
+        <article class="page" data-page="4">
+          <div class="paper paper-yellow">
+            <div class="tape tape-left"></div>
+            <p class="page-label">04 · A WISH FOR YOU</p>
+            <h2>I hope life gives<br>you <em>good things.</em></h2>
+            <p>I hope you get more reasons to laugh, people who make you feel appreciated, and days that remind you how much good there is waiting for you.</p>
+            <p>I hope you keep finding little things to look forward to, even on the quiet days.</p>
+            <div class="tiny-flower" aria-hidden="true">✿　✿　✿</div>
+            <span class="page-number">04</span>
+          </div>
+        </article>
+
+        <article class="page" data-page="5">
+          <div class="paper paper-pink">
+            <p class="page-label">05 · YOUR BIRTHDAY</p>
+            <span class="birthday-sparkle" aria-hidden="true">✧</span>
+            <h2>Happy<br><em>Birthday, Isti!</em></h2>
+            <p>May this new chapter bring you gentler days, beautiful surprises, sincere smiles, and so many reasons to be proud of yourself.</p>
+            <p>You deserve a year filled with things that make your heart feel light.</p>
+            <div class="birthday-cake" aria-hidden="true">🎂</div>
+            <span class="page-number">05</span>
+          </div>
+        </article>
+
+        <article class="page" data-page="6">
+          <div class="paper last-paper">
+            <p class="page-label">06 · UNTIL THE NEXT PAGE</p>
+            <div class="last-heart" aria-hidden="true">♡</div>
+            <h2>One last<br><em>little thing.</em></h2>
+            <p>Whatever comes next, I hope you never forget that you can make a difference just by being yourself.</p>
+            <p>Thank you for being a part of these pages.</p>
+            <p class="handwritten signature">with care, always ♡</p>
+            <button class="restart-link" id="restartInline" type="button">↶ Read from the beginning</button>
+            <span class="page-number">06</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <nav class="controls" aria-label="Kontrol halaman">
+      <button class="nav-button" id="prevBtn" type="button" aria-label="Halaman sebelumnya" disabled>← <span>Back</span></button>
+      <div class="page-status">
+        <span id="pageCount">Cover</span>
+        <div class="progress-track"><span id="progress"></span></div>
+      </div>
+      <button class="nav-button next-button" id="nextBtn" type="button"><span>Open book</span> →</button>
+    </nav>
+    <p class="hint" id="hint">Tap the right side of the book to turn a page.</p>
+    <footer class="site-footer">MADE OF WORDS, PAPER & A LITTLE HEART <span>♡</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
