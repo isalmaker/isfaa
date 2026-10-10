@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#fff4f8">
-<title>Isti Olivia ♡ Birthday</title>
+<title>Isti Olivia ♡ Selamat Ulang Tahun</title>
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -70,7 +70,7 @@ h1 span{display:inline-block;animation:heart 2.4s 2s ease-in-out infinite}
 
 footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a56b82;background:#fff}
 
-/* fullscreen viewer */
+/* Tampilan foto layar penuh */
 .viewer{position:fixed;inset:0;background:#170b11e8;z-index:100;display:none;align-items:center;justify-content:center;padding:25px;backdrop-filter:blur(10px)}
 .viewer.open{display:flex}
 .viewer img{max-width:94vw;max-height:86vh;object-fit:contain;border-radius:18px;box-shadow:0 25px 80px #0008}
@@ -78,7 +78,7 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
 .viewer .caption{position:absolute;bottom:22px;color:#fff;opacity:.8;font-size:12px;letter-spacing:2px;text-transform:uppercase}
 
 
-/* cinematic opening + ending upgrade */
+/* Penyempurnaan animasi pembuka dan penutup */
 .opening-note{
   position:absolute;top:28px;left:50%;transform:translateX(-50%);
   font-size:9px;letter-spacing:4px;color:#9c6378;opacity:0;
@@ -153,7 +153,7 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
 }
 @media(prefers-reduced-motion:reduce){
  *,*:before,*:after{animation:none!important;transition:none!important}
- .center,.enter,.flower,.card,.opening-note,.opening-line,.pretitles,.end-content,.end-kicker,.end h2,.end-divider,.end p,.end .back,.end-orbit{opacity:1!important;transform:none!important}
+ .center,.enter,.flower,.card,.opening-note,.opening-line,.pretitle,.end-content,.end-kicker,.end h2,.end-divider,.end p,.end .back,.end-orbit{opacity:1!important;transform:none!important}
 }
 </style>
 
@@ -200,11 +200,11 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
     text-shadow:0 8px 25px rgba(110,70,85,.08);
   }
 
-  .entry{
+  .enter{
     box-shadow:0 10px 30px rgba(130,75,95,.12);
     transition:transform .35s ease, box-shadow .35s ease;
   }
-  .entry:hover{
+  .enter:hover{
     transform:translateY(-3px);
     box-shadow:0 15px 38px rgba(130,75,95,.18);
   }
@@ -280,7 +280,7 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
   }
   .music-label{font-size:12px;letter-spacing:.08em}
   .music-toggle.playing .music-icon{animation:musicPulse 1.2s ease-in-out infinite}
-  .music-toggle.playing .music-label::after{content:" · playing"}
+  .music-toggle.playing .music-label::after{content:" · diputar"}
 
   @keyframes musicPulse{
     0%,100%{transform:scale(1)}
@@ -304,7 +304,7 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
 
 <style id="scrapbook-styles">
 
-/* Interactive scrapbook book: isolated styles, leaving hero/music/ending intact */
+/* Gaya buku kenangan interaktif, terpisah dari bagian pembuka, musik, dan penutup */
 .book-section{display:block!important;min-height:100svh;padding:76px 18px 72px!important;background:linear-gradient(145deg,#fff0f6,#fffaf7 55%,#f9e6df)!important;overflow:hidden}
 .book-wrap{width:min(850px,100%);margin:0 auto;text-align:center}
 .book-eyebrow{font-size:10px;letter-spacing:.2em;color:#b0788d;font-weight:700;margin:0 0 12px}
@@ -344,8 +344,8 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
 
   <div class="opening-note">02 · 11 · 2011</div>
   <div class="center">
-    <div class="small">for Isti Olivia</div>
-    <div class="pretitle">a tiny place for</div>
+    <div class="small">untuk Isti Olivia</div>
+    <div class="pretitle">ruang kecil untuk</div>
     <h1>Isti Olivia <span>♡</span></h1>
     <p class="desc">02 November 2011 · hari ketika Isti Olivia lahir.<br>Ada sedikit cerita yang sengaja disimpan untuk Isti.</p>
     <a class="enter" href="#memories">buka perlahan&nbsp; →</a>
@@ -356,48 +356,48 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
 
 <section class="memories book-section" id="memories">
   <div class="book-wrap">
-    <p class="book-eyebrow">A LITTLE BOOK MADE FOR YOU</p>
-    <h2 class="book-heading">Our little <em>story.</em></h2>
+    <p class="book-eyebrow">BUKU KECIL YANG DIBUAT UNTUKMU</p>
+    <h2 class="book-heading">Cerita <em>kecil kita.</em></h2>
     <p class="book-lead">Beberapa kata yang ingin disimpan untuk Isti. ♡</p>
 
-    <div class="scrapbook-scene" aria-label="Buku ungkapan interaktif">
+    <div class="scrapbook-scene" aria-label="Buku kenangan interaktif">
       <div class="scrapbook" id="scrapbook">
         <div class="scrapbook-back"></div>
         <div class="scrapbook-stack" aria-hidden="true"></div>
         <article class="scrap-page scrap-cover" data-index="0" aria-label="Sampul buku">
           <div class="scrap-cover-inner">
             <span class="scrap-seal">♡</span>
-            <p class="scrap-cover-kicker">A COLLECTION OF LITTLE THINGS</p>
-            <h3>Dear<br><em>Isti</em></h3>
-            <p class="scrap-cover-note">for all the words<br>that are hard to say</p>
+            <p class="scrap-cover-kicker">KUMPULAN HAL-HAL KECIL</p>
+            <h3>Untuk<br><em>Isti</em></h3>
+            <p class="scrap-cover-note">untuk semua kata<br>yang sulit diucapkan</p>
             <span class="scrap-flower">✿</span>
-            <p class="scrap-cover-footer">OPEN WHEN YOU'RE READY</p>
+            <p class="scrap-cover-footer">BUKA SAAT KAMU SIAP</p>
           </div>
         </article>
         <article class="scrap-page" data-index="1" aria-label="Halaman 1">
-          <div class="scrap-paper"><span class="scrap-tape tape-a"></span><p class="scrap-label">01 · A LITTLE NOTE</p><h3>For someone<br><em>special.</em></h3><p>Some people make ordinary days feel a little less ordinary. They bring a little more warmth, a little more laughter, and something worth remembering.</p><p>And somehow, you became one of those people to me.</p><span class="scrap-doodle">♡</span><span class="scrap-page-number">01</span></div>
+          <div class="scrap-paper"><span class="scrap-tape tape-a"></span><p class="scrap-label">01 · SEBUAH PESAN KECIL</p><h3>Untuk seseorang<br>yang <em>istimewa.</em></h3><p>Ada orang yang membuat hari biasa terasa lebih berarti. Mereka membawa kehangatan, tawa, dan hal-hal kecil yang layak dikenang.</p><p>Entah bagaimana, kamu menjadi salah satu orang itu bagiku.</p><span class="scrap-doodle">♡</span><span class="scrap-page-number">01</span></div>
         </article>
         <article class="scrap-page" data-index="2" aria-label="Halaman 2">
-          <div class="scrap-paper paper-rose"><span class="scrap-tape tape-b"></span><p class="scrap-label">02 · THE LITTLE THINGS</p><h3>It's the little<br><em>things.</em></h3><p>It's the conversations that go on longer than expected, the random moments that turn into memories, and the small things that somehow stay in your mind.</p><p>Not every meaningful moment has to be big. Sometimes, the simplest ones become the ones we keep.</p><span class="scrap-sticker">✳</span><span class="scrap-page-number">02</span></div>
+          <div class="scrap-paper paper-rose"><span class="scrap-tape tape-b"></span><p class="scrap-label">02 · HAL-HAL KECIL</p><h3>Justru hal-hal<br><em>sederhana.</em></h3><p>Obrolan yang berlangsung lebih lama dari dugaan, kejadian spontan yang berubah menjadi kenangan, dan hal-hal kecil yang entah kenapa terus teringat.</p><p>Tak semua momen berarti harus besar. Terkadang, hal paling sederhana justru menjadi kenangan yang paling kita simpan.</p><span class="scrap-sticker">✳</span><span class="scrap-page-number">02</span></div>
         </article>
         <article class="scrap-page" data-index="3" aria-label="Halaman 3">
-          <div class="scrap-paper paper-lines"><p class="scrap-label">03 · A MEMORY TO KEEP</p><h3>Little moments,<br><em>long memories.</em></h3><div class="scrap-memory"><span>✿</span><p>Maybe it wasn't a perfect day or a grand adventure. Maybe it was just one of those small moments that made us smile.</p></div><p>Whatever the moment was, I'm glad it became a memory worth keeping.</p><p class="scrap-handwriting">keep this one close ♡</p><span class="scrap-page-number">03</span></div>
+          <div class="scrap-paper paper-lines"><p class="scrap-label">03 · KENANGAN UNTUK DISIMPAN</p><h3>Momen kecil,<br><em>kenangan panjang.</em></h3><div class="scrap-memory"><span>✿</span><p>Mungkin bukan hari yang sempurna atau petualangan besar. Mungkin hanya momen sederhana yang membuat kita tersenyum.</p></div><p>Apa pun momennya, aku senang karena itu menjadi kenangan yang layak disimpan.</p><p class="scrap-handwriting">simpan baik-baik ♡</p><span class="scrap-page-number">03</span></div>
         </article>
         <article class="scrap-page" data-index="4" aria-label="Halaman 4">
-          <div class="scrap-paper paper-butter"><span class="scrap-tape tape-a"></span><p class="scrap-label">04 · A WISH FOR YOU</p><h3>I hope life gives<br>you <em>good things.</em></h3><p>I hope you get more reasons to laugh, people who make you feel appreciated, and days that remind you how much good there is waiting for you.</p><p>I hope you keep finding little things to look forward to, even on the quiet days.</p><div class="scrap-flowers">✿　✿　✿</div><span class="scrap-page-number">04</span></div>
+          <div class="scrap-paper paper-butter"><span class="scrap-tape tape-a"></span><p class="scrap-label">04 · HARAPAN UNTUKMU</p><h3>Semoga hidup<br>memberimu <em>hal baik.</em></h3><p>Semoga kamu punya lebih banyak alasan untuk tertawa, bertemu orang-orang yang menghargaimu, dan menjalani hari yang mengingatkanmu bahwa banyak hal baik masih menantimu.</p><p>Semoga selalu ada hal kecil yang kamu nantikan, bahkan di hari-hari yang terasa biasa saja.</p><div class="scrap-flowers">✿　✿　✿</div><span class="scrap-page-number">04</span></div>
         </article>
         <article class="scrap-page" data-index="5" aria-label="Halaman 5">
-          <div class="scrap-paper paper-rose"><p class="scrap-label">05 · YOUR BIRTHDAY</p><span class="scrap-sparkle">✧</span><h3>Happy<br><em>Birthday, Isti!</em></h3><p>May this new chapter bring you gentler days, beautiful surprises, sincere smiles, and so many reasons to be proud of yourself.</p><p>You deserve a year filled with things that make your heart feel light.</p><span class="scrap-cake">🎂</span><span class="scrap-page-number">05</span></div>
+          <div class="scrap-paper paper-rose"><p class="scrap-label">05 · HARI ULANG TAHUNMU</p><span class="scrap-sparkle">✧</span><h3>Selamat<br><em>Ulang Tahun, Isti!</em></h3><p>Semoga babak baru dalam hidupmu dipenuhi hari-hari yang lebih indah, kejutan menyenangkan, senyum tulus, dan banyak alasan untuk bangga pada dirimu sendiri.</p><p>Semoga tahun ini dipenuhi hal-hal yang membuat hatimu terasa ringan dan bahagia.</p><span class="scrap-cake">🎂</span><span class="scrap-page-number">05</span></div>
         </article>
         <article class="scrap-page" data-index="6" aria-label="Halaman 6">
-          <div class="scrap-paper scrap-last"><p class="scrap-label">06 · UNTIL THE NEXT PAGE</p><div class="scrap-last-heart">♡</div><h3>One last<br><em>little thing.</em></h3><p>Whatever comes next, I hope you never forget that you can make a difference just by being yourself.</p><p>Thank you for being a part of these pages.</p><p class="scrap-handwriting">with care, always ♡</p><button class="scrap-restart" id="scrapRestart" type="button">↶ Read from the beginning</button><span class="scrap-page-number">06</span></div>
+          <div class="scrap-paper scrap-last"><p class="scrap-label">06 · SAMPAI HALAMAN BERIKUTNYA</p><div class="scrap-last-heart">♡</div><h3>Satu hal kecil<br><em>terakhir.</em></h3><p>Apa pun yang akan datang, semoga kamu tak lupa bahwa menjadi dirimu sendiri saja sudah bisa membawa arti bagi orang lain.</p><p>Terima kasih sudah menjadi bagian dari halaman-halaman ini.</p><p class="scrap-handwriting">dengan tulus, selalu ♡</p><button class="scrap-restart" id="scrapRestart" type="button">↶ Baca dari awal</button><span class="scrap-page-number">06</span></div>
         </article>
       </div>
     </div>
     <nav class="scrap-controls" aria-label="Navigasi buku">
-      <button class="scrap-nav" id="scrapPrev" type="button" disabled aria-label="Halaman sebelumnya">← <span>Back</span></button>
-      <div class="scrap-status"><span id="scrapCount">Cover</span><div class="scrap-progress"><span id="scrapProgress"></span></div></div>
-      <button class="scrap-nav scrap-next" id="scrapNext" type="button"><span>Open book</span> →</button>
+      <button class="scrap-nav" id="scrapPrev" type="button" disabled aria-label="Halaman sebelumnya">← <span>Kembali</span></button>
+      <div class="scrap-status"><span id="scrapCount">Sampul</span><div class="scrap-progress"><span id="scrapProgress"></span></div></div>
+      <button class="scrap-nav scrap-next" id="scrapNext" type="button"><span>Buka buku</span> →</button>
     </nav>
     <p class="scrap-hint" id="scrapHint">Ketuk sampul untuk membuka buku. ♡</p>
   </div>
@@ -408,9 +408,9 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
   <div class="end-orbit orbit-2">✦</div>
   <div class="end-orbit orbit-3">♡</div>
   <div class="end-content">
-    <div class="small">and that's only a little part</div>
-    <div class="end-kicker">one more thing...</div>
-    <h2>Happy<br>Birthday, Isti <span>♡</span></h2>
+    <div class="small">dan ini baru sebagian kecil</div>
+    <div class="end-kicker">satu hal lagi...</div>
+    <h2>Selamat<br>Ulang Tahun, Isti <span>♡</span></h2>
     <div class="end-divider"><i></i><span>✦</span><i></i></div>
     <p>Semoga semua hal baik menemukan jalannya kepadamu. Selamat ulang tahun, Isti. Semoga hari-harimu selalu dipenuhi hal-hal yang layak untuk diingat.</p>
     <a class="back" href="#top">mulai lagi dari awal ↑</a>
@@ -451,10 +451,10 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
   function update() {
     prev.disabled = current === 0 || busy;
     next.disabled = current === pages.length - 1 || busy;
-    next.innerHTML = current === 0 ? '<span>Open book</span> →' : current === pages.length - 1 ? '<span>The end</span> ♡' : '<span>Next page</span> →';
-    count.textContent = current === 0 ? 'Cover' : `Page ${current} of ${pages.length - 1}`;
+    next.innerHTML = current === 0 ? '<span>Buka buku</span> →' : current === pages.length - 1 ? '<span>Selesai</span> ♡' : '<span>Halaman berikutnya</span> →';
+    count.textContent = current === 0 ? 'Sampul' : `Halaman ${current} dari ${pages.length - 1}`;
     progress.style.width = `${current / (pages.length - 1) * 100}%`;
-    hint.textContent = current === 0 ? 'Ketuk sampul atau tombol “Open book” untuk mulai. ♡' : current === pages.length - 1 ? 'Kamu sudah sampai di halaman terakhir. Simpan pesan kecil ini. ♡' : 'Ketuk sisi kanan untuk lanjut, atau sisi kiri untuk kembali.';
+    hint.textContent = current === 0 ? 'Ketuk sampul atau tombol “Buka buku” untuk mulai. ♡' : current === pages.length - 1 ? 'Kamu sudah sampai di halaman terakhir. Simpan pesan kecil ini. ♡' : 'Ketuk sisi kanan untuk lanjut, atau sisi kiri untuk kembali.';
   }
   function forward() {
     if (busy || current >= pages.length - 1) return;
@@ -497,7 +497,7 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
     if (matchMedia('(max-width:649px)').matches) {
       if (x > rect.width * .55) forward(); else backward();
     } else {
-      if (x > rect.left + rect.width * .52) forward(); else backward();
+      if (x > rect.width * .52) forward(); else backward();
     }
   });
   document.addEventListener('keydown', e => {
@@ -514,7 +514,7 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
   <audio id="bgMusic" src="audio/birthday.mp3" loop preload="auto"></audio>
   <button class="music-toggle" id="musicToggle" type="button" aria-label="Putar musik" aria-pressed="false">
     <span class="music-icon">♪</span>
-    <span class="music-label">music</span>
+    <span class="music-label">musik</span>
   </button>
 </div>
 
@@ -523,7 +523,7 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
 (() => {
   const audio = document.getElementById('bgMusic');
   const btn = document.getElementById('musicToggle');
-  const entry = document.querySelector('.entry');
+  const entry = document.querySelector('.enter');
 
   if (!audio || !btn) return;
 
@@ -540,7 +540,7 @@ footer{text-align:center;padding:25px;font-size:11px;letter-spacing:2px;color:#a
     else { audio.pause(); setState(false); }
   });
 
-  // User gesture on the opening button starts the soundtrack.
+  // Ketukan pada tombol pembuka akan memulai musik.
   if (entry) entry.addEventListener('click', () => {
     playMusic();
   }, { once: true });
